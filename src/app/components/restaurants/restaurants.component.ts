@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ErrorHandler } from 'interceptors/error-interceptor';
 import { Restaurant } from 'models/restaurant.model';
 import { RestaurantService } from 'services/restaurant.service';
 
@@ -17,7 +18,9 @@ export class RestaurantsComponent implements OnInit {
     .subscribe(response => {
       this.restaurants = response
     },
-    error => {});
+    error => {
+      ErrorHandler.handleError(error);
+    });
   }
 
 }

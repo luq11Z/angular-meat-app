@@ -3,7 +3,8 @@ import { Http } from "@angular/http";
 import { API_CONFIG } from "config/api.config";
 import { Restaurant } from "models/restaurant.model";
 import { Observable } from "rxjs/Observable";
-import 'rxjs/add/operator/map'
+import { ErrorHandler } from "interceptors/error-interceptor";
+import 'rxjs/add/operator/map';
 
 
 @Injectable()

@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component'
 import { ROUTES } from './app.routes';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { RestaurantDetailsComponent } from './components/restaurants/restaurant-details/restaurant-details.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ROUTES } from './app.routes';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    RestaurantsComponent,
+    RestaurantDetailsComponent
   ],
   imports: [
     BrowserModule,

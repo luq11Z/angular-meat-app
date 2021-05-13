@@ -12,13 +12,19 @@ export class RestaurantService {
 
     constructor(private http: Http) {}
 
-    getRestaurants(): Observable<Restaurant[]> {
+    getRestaurants() : Observable<Restaurant[]> {
         return this.http.get(`${API_CONFIG.baseUrl}/restaurants`)
         .map(response => response.json());
     }
 
-    getRestaurantById(id: string) :Observable<Restaurant>{
+    getRestaurantById(id: string) : Observable<Restaurant>{
         return this.http.get(`${API_CONFIG.baseUrl}/restaurants/${id}`)
         .map(response => response.json());
     }
+
+    getReviewsOfRestaurants(id: string) : Observable<any>{
+        return this.http.get(`${API_CONFIG.baseUrl}/restaurants/${id}/reviews`)
+        .map(response => response.json());
+    }
+
 }

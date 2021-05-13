@@ -12,17 +12,17 @@ export class RestaurantDetailComponent implements OnInit {
 
   restaurant: Restaurant;
 
-  constructor(private restaurantService: RestaurantService,
-              private route: ActivatedRoute) { }
+  constructor(private restaurantsService: RestaurantService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.restaurantService.getRestaurantById(this.route.snapshot.params['id'])
-    .subscribe(response => {
-      this.restaurant = response;
-    },
-    error => {
-      ErrorHandler.handleError(error);
-    })
-  }
+  this.restaurantsService.getRestaurantById(this.route.snapshot.params['id'])
+  .subscribe(response => {
+    this.restaurant = response
+  },
+      error => {
+        ErrorHandler.handleError(error);
+      });
+    }
 
-}
+  }

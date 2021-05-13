@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ErrorHandler } from 'interceptors/error-interceptor';
+import { Restaurant } from 'models/restaurant.model';
+import { RestaurantService } from 'services/restaurant.service';
 
 @Component({
   selector: 'mt-restaurant-detail',
@@ -6,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantDetailComponent implements OnInit {
 
-  constructor() { }
+  restaurant: Restaurant;
+
+  constructor(private restaurantService: RestaurantService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.restaurantService.getRestaurantById(this.route.snapshot.params['id'])
+    .subscribe(response => {
+      this.restaurant = response;
+    },
+    error => {
+      ErrorHandler.handleError(error);
+    })
   }
 
 }

@@ -3,14 +3,14 @@
 
   <mt-menu-item *ngFor="let item of menu | async" 
                 [product]="item" 
-                (addProductToCart)="addProduct($event)">
+                (addProductToCart)="cart.addItem($event)">
   </mt-menu-item>
 
 </div>
 
 <div class="col-md-3 col-xs-12">
 
-  <mt-shopping-cart></mt-shopping-cart>
+  <mt-shopping-cart #cart></mt-shopping-cart>
   
 </div>
 <!-- FIM DO MENU -->

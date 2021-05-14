@@ -7,29 +7,23 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-    <div class="table-responsive">
+    <div *ngIf="!getItems().length">
+      <h4>Seu carrinho está vazio.</h4>
+    </div>
+    <div class="table-responsive" *ngIf="!getItems().length">
         <table class="table">
           <tbody>
-          <tr>
-            <th style="width:60%">Cerveja:</th>
+          <tr *ngFor="let item of getItems()">
+            <th style="width:60%">{{item.product.name}}</th>
 
-            <td class="text-right">R$ 6,00</td>
+            <td class="text-right">{{item.subTotal() | currency: 'EUR' :true}}</td>
 
           </tr>
-          <tr>
-            <th>Pork Burger</th>
-
-            <td class="text-right">R$ 22,00</td>
-          </tr>
-          <tr>
-            <th>Frete:</th>
-
-            <td class="text-right">R$ 8,00</td>
-          </tr>
+          
           <tr>
             <th>Total:</th>
 
-            <td class="text-right">R$ 80,90</td>
+            <td class="text-right">{{total() | currency: 'EUR' :true}}</td>
           </tr>
         </tbody></table>
       </div>

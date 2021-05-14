@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ErrorHandler } from 'interceptors/error-interceptor';
 import { Restaurant } from 'models/restaurant.model';
-import { RestaurantService } from 'services/restaurant.service';
+import { RestaurantService } from 'services/domain/restaurant.service';
 
 @Component({
   selector: 'mt-restaurant-detail',

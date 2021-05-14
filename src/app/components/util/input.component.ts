@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { AfterContentInit, Component, ContentChild, Input, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
@@ -18,8 +17,6 @@ export class InputComponent implements OnInit, AfterContentInit {
   errorMessage: string;
 
   @ContentChild(NgModel) model: NgModel;
-  
- 
 
   constructor() { }
 

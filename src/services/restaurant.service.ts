@@ -3,8 +3,8 @@ import { Http } from "@angular/http";
 import { API_CONFIG } from "config/api.config";
 import { Restaurant } from "models/restaurant.model";
 import { Observable } from "rxjs/Observable";
-import { ErrorHandler } from "interceptors/error-interceptor";
 import 'rxjs/add/operator/map';
+import { Product } from "models/product.model";
 
 
 @Injectable()
@@ -24,6 +24,11 @@ export class RestaurantService {
 
     getReviewsOfRestaurants(id: string) : Observable<any>{
         return this.http.get(`${API_CONFIG.baseUrl}/restaurants/${id}/reviews`)
+        .map(response => response.json());
+    }
+
+    getRestaurantMenu(id: string) : Observable<Product[]>{
+        return this.http.get(`${API_CONFIG.baseUrl}/restaurants/${id}/menu`)
         .map(response => response.json());
     }
 

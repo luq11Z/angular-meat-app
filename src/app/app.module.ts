@@ -23,6 +23,7 @@ import { InputComponent } from './components/shared/input/input.component';
 import { RadioComponent } from './components/shared/radio/radio.component';
 import { OrderItemsComponent } from './components/order/order-items/order-items.component';
 import { OrderService } from 'services/domain/order.service';
+import { DeliveryCostsComponent } from './components/order/delivery-costs/delivery-costs.component';
 
 
 
@@ -42,7 +43,8 @@ import { OrderService } from 'services/domain/order.service';
     OrderComponent,
     InputComponent,
     RadioComponent,
-    OrderItemsComponent
+    OrderItemsComponent,
+    DeliveryCostsComponent
   ],
   imports: [
     BrowserModule,

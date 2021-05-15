@@ -9,6 +9,9 @@ import { RadioOption } from '../shared/radio/radio-option.model';
 })
 export class OrderComponent implements OnInit {
 
+  deliveryCosts: number = 4.50;
+
+
   paymentOptions: RadioOption[] = [
     {label: 'Dinheiro', value: 'MON'},
     {label: 'Cartão de Débito', value: 'DEB'},
@@ -34,6 +37,10 @@ export class OrderComponent implements OnInit {
 
   remove(item: CartItem) {
     this.orderService.remove(item);
+  }
+
+  itemsTotal() : number {
+    return this.orderService.itemsTotal();
   }
 
 }

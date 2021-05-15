@@ -19,7 +19,8 @@ import { ReviewsComponent } from './components/restaurants/restaurant-detail/rev
 import { CartService } from 'services/domain/cart.service';
 import { OrderComponent } from './components/order/order.component';
 import { FormsModule } from '@angular/forms';
-import { InputComponent } from './components/util/input.component';
+import { InputComponent } from './components/shared/input/input.component';
+import { RadioComponent } from './components/shared/radio/radio.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { InputComponent } from './components/util/input.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,

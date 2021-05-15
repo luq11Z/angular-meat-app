@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'models/cart-tem.model';
+import { Order, OrderItem } from 'models/order.model';
 import { OrderService } from 'services/domain/order.service';
 import { RadioOption } from '../shared/radio/radio-option.model';
 
@@ -41,6 +42,15 @@ export class OrderComponent implements OnInit {
 
   itemsTotal() : number {
     return this.orderService.itemsTotal();
+  }
+
+  checkout(order: Order) {
+    order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.product.id));
+    this.orderService.checkout(order).subscribe((orderId: string) => {
+      console.log(`Compra concluída: ${orderId}`);
+      this.orderService.clear();
+    })
+    console.log(order);
   }
 
 }

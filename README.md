@@ -4,7 +4,7 @@
 
 ### Clonando o Repositório
 
-`git clone https://github.com/luq11Z/meat-app.git`
+`git clone https://github.com/luq11Z/angular-meat-app.git`
 
 ### Instalando as Dependências
 

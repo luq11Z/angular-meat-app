@@ -21,6 +21,9 @@ import { OrderComponent } from './components/order/order.component';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './components/shared/input/input.component';
 import { RadioComponent } from './components/shared/radio/radio.component';
+import { OrderItemsComponent } from './components/order/order-items/order-items.component';
+import { OrderService } from 'services/domain/order.service';
+
 
 
 @NgModule({
@@ -38,7 +41,8 @@ import { RadioComponent } from './components/shared/radio/radio.component';
     ReviewsComponent,
     OrderComponent,
     InputComponent,
-    RadioComponent
+    RadioComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { RadioComponent } from './components/shared/radio/radio.component';
   ],
   providers: [
     RestaurantService,
-    CartService
+    CartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

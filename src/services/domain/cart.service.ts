@@ -5,22 +5,33 @@ export class CartService {
 
     items: CartItem[] = [];
     
-    clearCart() {
-        this.items = [];
-    }
-
     addItem(item: Product) {
         let hasItem = this.items.find(x => x.product.id === item.id);
         if(hasItem) {
-            hasItem.quantity++; 
+            this.increaseQuantity(hasItem); 
         }
         else {
             this.items.push(new CartItem(item));
         }
-    }   
+    }
+    
+    increaseQuantity(item: CartItem) {
+        item.quantity++;
+    }
 
     removeItem(item: any) {
         this.items.splice(this.items.indexOf(item), 1);
+    }
+
+    decreaseQuantity(item: CartItem) {
+        item.quantity--;
+        if(item.quantity <= 0) {
+            this.removeItem(item);
+        }
+    }
+
+    clearCart() {
+        this.items = [];
     }
 
     total() : number{

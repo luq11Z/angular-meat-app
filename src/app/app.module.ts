@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
@@ -19,6 +20,7 @@ import { SharedModule } from './components/shared/shared.module';
 import { CartService } from 'services/domain/cart.service';
 import { RestaurantService } from 'services/domain/restaurant.service';
 import { OrderService } from 'services/domain/order.service';
+import { NotificationService } from 'services/notification.service';
 
 
 
@@ -38,6 +40,7 @@ import { OrderService } from 'services/domain/order.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
@@ -46,7 +49,8 @@ import { OrderService } from 'services/domain/order.service';
   providers: [
     CartService,
     RestaurantService,
-    OrderService
+    OrderService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

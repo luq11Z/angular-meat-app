@@ -21,6 +21,7 @@ import { CartService } from 'services/domain/cart.service';
 import { RestaurantService } from 'services/domain/restaurant.service';
 import { OrderService } from 'services/domain/order.service';
 import { NotificationService } from 'services/notification.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -36,7 +37,8 @@ import { NotificationService } from 'services/notification.service';
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -438,6 +438,30 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "Lucas Silva",
+      "email": "lucas_segundinho@hotmail.com",
+      "emailConfirmation": "lucas_segundinho@hotmail.com",
+      "address": "Aguas",
+      "number": "1",
+      "optionalAddress": "",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "zlasagna"
+        },
+        {
+          "quantity": 1,
+          "menuId": "greensandwich"
+        },
+        {
+          "quantity": 1,
+          "menuId": "ceasar"
+        }
+      ],
+      "id": 6
     }
   ]
 }

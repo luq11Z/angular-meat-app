@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
@@ -26,6 +26,10 @@ import { LoginComponent } from './components/security/login/login.component';
 import { LoginService } from 'services/login.service';
 import { LoggedInGuard } from './components/security/loggendin.guard';
 import { UserDetailComponent } from './components/header/user-detail/user-detail.component';
+import { LeaveOrderGuard } from './components/order/order-leave.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
+import { AuthInterceptor } from './components/security/auth.interceptor';
+import { ApplicationErrorHandler } from 'interceptors/error-interceptor';
 
 
 
@@ -60,7 +64,10 @@ import { UserDetailComponent } from './components/header/user-detail/user-detail
     OrderService,
     NotificationService,
     LoginService,
-    LoggedInGuard
+    LoggedInGuard,
+    LeaveOrderGuard,
+    {provide: ErrorHandler, useClass: ApplicationErrorHandler},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })

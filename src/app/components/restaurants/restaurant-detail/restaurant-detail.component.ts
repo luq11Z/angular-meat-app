@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ErrorHandler } from 'interceptors/error-interceptor';
 import { Restaurant } from 'models/restaurant.model';
 import { RestaurantService } from 'services/domain/restaurant.service';
 
@@ -16,13 +15,10 @@ export class RestaurantDetailComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-  this.restaurantsService.getRestaurantById(this.route.snapshot.params['id'])
-  .subscribe(response => {
-    this.restaurant = response
-  },
-      error => {
-        ErrorHandler.handleError(error);
-      });
-    }
-
+    this.restaurantsService.getRestaurantById(this.route.snapshot.params['id'])
+    .subscribe(response => {
+      this.restaurant = response
+    },
+        error => {});
+      }
   }

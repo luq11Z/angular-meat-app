@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ErrorHandler } from 'interceptors/error-interceptor';
 import { Restaurant } from 'models/restaurant.model';
 import { RestaurantService } from 'services/domain/restaurant.service';
 import { state, style, trigger, transition, animate } from '@angular/animations';
@@ -56,9 +55,7 @@ export class RestaurantsComponent implements OnInit {
     .subscribe(response => {
       this.restaurants = response
     },
-    error => {
-      ErrorHandler.handleError(error);
-    });
+    error => {});
   }
 
   toggleSearch() {

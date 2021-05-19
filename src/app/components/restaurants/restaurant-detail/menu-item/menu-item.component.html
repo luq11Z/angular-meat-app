@@ -4,7 +4,7 @@
   <div class="menu-item-info-box-content">
     <span class="menu-item-info-box-text">{{product.name}}</span>
     <span class="menu-item-info-box-detail">{{product.description}}</span>
-    <span class="menu-item-info-box-price">{{product.price | currency: 'EUR' :true}}</span>
+    <span class="menu-item-info-box-price">{{product.price | currency: 'EUR' : 'symbol'}}</span>
     <a (click)="addToCart()" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
   </div>
   <!-- /.info-box-content -->

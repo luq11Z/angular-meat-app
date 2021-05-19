@@ -26,7 +26,7 @@
       <td>{{item.product.nome}}</td>
 
       <td>{{item.product.description}}</td>
-      <td class="text-right">{{item.subTotal() | currency: 'EUR' :true}}</td>
+      <td class="text-right">{{item.subTotal() | currency: 'EUR' : 'symbol'}}</td>
       <td class="text-right">
         <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
       </td>

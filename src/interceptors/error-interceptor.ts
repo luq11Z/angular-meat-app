@@ -1,4 +1,4 @@
-import {Response} from '@angular/http'
+import {HttpErrorResponse} from '@angular/common/http'
 import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/observable/throw'
 import { Injectable } from '@angular/core';
@@ -6,14 +6,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ErrorHandler {
 
-    static handleError(error: Response | any) {
+    static handleError(error: HttpErrorResponse | any) {
         let errorMessage: string;
 
-        if(error instanceof Response) {
+        if(error instanceof HttpErrorResponse) {
+            const body = error.error;
             errorMessage = `Erro ${error.status} ao acessar a URL ${error.url} - ${error.statusText}`
         }
         else {
-            errorMessage = error.toString();
+            errorMessage = error.message ? error.message : error.toString();
         }
 
         console.log(errorMessage);

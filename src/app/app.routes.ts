@@ -6,9 +6,11 @@ import { MenuComponent } from "./components/restaurants/restaurant-detail/menu/m
 import { RestaurantDetailComponent } from "./components/restaurants/restaurant-detail/restaurant-detail.component";
 import { ReviewsComponent } from "./components/restaurants/restaurant-detail/reviews/reviews.component";
 import { RestaurantsComponent } from "./components/restaurants/restaurants.component";
+import { LoginComponent } from "./components/security/login/login.component";
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
+    {path: 'login', component: LoginComponent},
     {path: 'about', loadChildren: './components/about/about.module#AboutModule'},
     {path: 'restaurants', component: RestaurantsComponent},
     {path: 'restaurants/:id', component: RestaurantDetailComponent,

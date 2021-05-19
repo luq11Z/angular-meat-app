@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import { RestaurantService } from 'services/domain/restaurant.service';
 import { OrderService } from 'services/domain/order.service';
 import { NotificationService } from 'services/notification.service';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './components/security/login/login.component';
 
 
 
@@ -38,12 +39,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES),
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     SharedModule

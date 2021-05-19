@@ -23,6 +23,9 @@ import { OrderService } from 'services/domain/order.service';
 import { NotificationService } from 'services/notification.service';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/security/login/login.component';
+import { LoginService } from 'services/login.service';
+import { LoggedInGuard } from './components/security/loggendin.guard';
+import { UserDetailComponent } from './components/header/user-detail/user-detail.component';
 
 
 
@@ -40,7 +43,8 @@ import { LoginComponent } from './components/security/login/login.component';
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import { LoginComponent } from './components/security/login/login.component';
     CartService,
     RestaurantService,
     OrderService,
-    NotificationService
+    NotificationService,
+    LoginService,
+    LoggedInGuard
   ],
   bootstrap: [AppComponent]
 })
